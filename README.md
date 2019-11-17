@@ -1,12 +1,12 @@
-## Jasper Jean Bus Liner Inventory System
-A web-based maintenance and inventory system for Jasper Jean Bus Liner with decision support system.
+## eJBus: An online operation management system
+Technology for Jasper Jean Services Incorporation
 
 ## Tools
 
 -PHP CodeIgniter<br>
 -MySQL<br>
 -HTML5 / CSS3 / Bootstrap<br>
--JavaScript<br>
+-VanillaJS<br>
 
 ## Server Requirements
 
