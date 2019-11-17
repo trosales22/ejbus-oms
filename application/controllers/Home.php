@@ -12,7 +12,8 @@ class Home extends CI_Controller {
 	}
 	
   	public function index() {
-    	$this->data['buses'] = $this->home_model->get_buses();
+		$this->data['buses'] = $this->home_model->get_buses();
+		$this->data['reservations'] = $this->home_model->get_reservation();
     	$this->load->view('home_page', $this->data);
 	}
 

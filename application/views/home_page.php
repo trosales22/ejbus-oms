@@ -46,7 +46,7 @@
         <!-- Begin Reservation -->
         <div class="container-fluid">
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Reservation (Special Trip)</h1>
+          <h1 class="h3 mb-2 text-gray-800">Reservation List</h1>
 
           <div class="card shadow mb-4">
             <div class="card-header py-3">
@@ -72,6 +72,16 @@
                   </thead>
                   
                   <tbody>
+										<?php foreach($reservations as $reservation){?>
+											<tr>
+												<td><?php echo $reservation->reservation_origin;?></td>
+												<td><?php echo $reservation->reservation_destination;?></td>
+												<td><?php echo $reservation->reservation_date;?></td>
+												<td><?php echo $reservation->reservation_time;?></td>
+												<td><?php echo $reservation->bus_name;?></td>
+												<td><?php echo $reservation->date_reserved;?></td>
+											</tr> 
+                    <?php }?>
                   </tbody>
 
                   <tfoot>
