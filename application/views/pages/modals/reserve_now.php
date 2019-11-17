@@ -49,7 +49,7 @@
 
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <button class="btn btn-primary" type="submit">Submit</button>
+                    <button class="btn btn-danger" type="submit">Submit</button>
                 </div>
             </form>
         </div>

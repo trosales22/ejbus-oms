@@ -1,5 +1,5 @@
 <!-- Sidebar -->
-<ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
 
 <!-- Sidebar - Brand -->
 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo base_url(); ?>">
@@ -11,13 +11,6 @@
 
 <!-- Divider -->
 <hr class="sidebar-divider my-0">
-
-<!-- Nav Item - Dashboard -->
-<li class="nav-item">
-  <a class="nav-link" href="<?php echo base_url(); ?>">
-	<i class="fas fa-fw fa-home"></i>
-	<span>Home</span></a>
-</li>
  
 <!-- Divider -->
 <hr class="sidebar-divider d-none d-md-block">
