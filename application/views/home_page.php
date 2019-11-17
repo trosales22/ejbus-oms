@@ -25,6 +25,7 @@
 	<link href="<?php echo base_url(); ?>static/SBAdmin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 	<link href="<?php echo base_url(); ?>static/css/parsley.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 	<link href="<?php echo base_url(); ?>static/js/libraries/jquery-confirm-v3.3.4/dist/jquery-confirm.min.css" rel="stylesheet">
 </head>
 
@@ -58,16 +59,15 @@
             </div>
             <div class="card-body">
               <div class="table-responsive">
-                <table class="table table-bordered" id="tbl_products" width="100%" cellspacing="0">
+                <table class="table table-bordered" id="tbl_reservation" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Name</th>
-                      <th>Description</th>
-											<th>Quantity</th>
-											<th>Amount</th>
-											<th>Seller</th>
-											<th>Date Added</th>
-                      <th>Actions</th>
+                      <th>Origin</th>
+                      <th>Destination</th>
+											<th>Date</th>
+											<th>Time</th>
+											<th>Bus</th>
+											<th>Date Reserved</th>
                     </tr>
                   </thead>
                   
@@ -76,13 +76,12 @@
 
                   <tfoot>
                     <tr>
-											<th>Name</th>
-                      <th>Description</th>
-											<th>Quantity</th>
-											<th>Amount</th>
-											<th>Seller</th>
-											<th>Date Added</th>
-                      <th>Actions</th>
+											<th>Origin</th>
+                      <th>Destination</th>
+											<th>Date</th>
+											<th>Time</th>
+											<th>Bus</th>
+											<th>Date Reserved</th>
                     </tr>
                   </tfoot>
                 </table>
@@ -130,6 +129,7 @@
   <!-- Page level custom scripts -->
 	<script src="<?php echo base_url(); ?>static/SBAdmin/js/demo/datatables-demo.js"></script>
 	<script src="<?php echo base_url(); ?>static/js/libraries/parsley.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 	<script src="<?php echo base_url(); ?>static/js/libraries/jquery-confirm-v3.3.4/js/jquery-confirm.js"></script>
 	<script src="<?php echo base_url(); ?>static/js/home.js"></script>
 

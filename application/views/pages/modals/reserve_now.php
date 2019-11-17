@@ -12,30 +12,30 @@
                 <div class="modal-body">
                     <div class="row form-group">
                         <div class="col-sm-6">
-                            <label for="inputOrigin">Origin</label>
-                            <input type="text" class="form-control" id="inputOrigin" name="reservation_origin" placeholder="Enter reservation origin.." required>
+                            <label for="inputReservationOrigin">Origin</label>
+                            <input type="text" class="form-control" id="inputReservationOrigin" name="reservation_origin" placeholder="Enter reservation origin.." required>
                         </div>
 
 						<div class="col-sm-6">
-                            <label for="inputDestination">Destination</label>
-                            <input type="text" class="form-control" id="inputDestination" name="reservation_destination" placeholder="Enter reservation destination.." required>
+                            <label for="inputReservationDestination">Destination</label>
+                            <input type="text" class="form-control" id="inputReservationDestination" name="reservation_destination" placeholder="Enter reservation destination.." required>
                         </div>
                     </div>
 
                     <div class="row form-group">
                         <div class="col-sm-4">
-                            <label for="inputDate">Date</label>
-                            <input type="text" class="form-control" id="inputDate" name="reservation_date" placeholder="Enter reservation date.." required>
+                            <label for="inputReservationDate">Date</label>
+                            <input type="text" class="form-control" id="inputReservationDate" name="reservation_date" placeholder="Enter reservation date.." required>
                         </div>
 						
                         <div class="col-sm-4">
-                            <label for="inputTime">Time</label>
-                            <input type="text" class="form-control" id="inputTime" name="reservation_time" placeholder="Enter reservation time.." required>
+                            <label for="inputReservationTime">Time</label>
+                            <input type="text" class="form-control" id="inputReservationTime" name="reservation_time" placeholder="Enter reservation time.." required>
                         </div>
 
 						<div class="col-sm-4">
-                            <label for="cmbProduct">Bus</label>
-                            <select name="reservation_bus" id="cmbBus" class="form-control" required>
+                            <label for="cmbReservationBus">Bus</label>
+                            <select name="reservation_bus" id="cmbReservationBus" class="form-control" required>
                                 <option disabled="disabled" selected="selected">Choose Bus</option>
                                 <?php foreach($buses as $bus){?>
                                     <option value="<?php echo $bus->bus_id;?>">

@@ -13,4 +13,14 @@ class Home_model extends CI_Model {
 		$stmt = $this->db->query($query);
 		return $stmt->result();
 	}
+	
+	public function reserve_now(array $reservation_params){
+		try{	
+			$this->db->insert('reservation', $reservation_params);
+			$lastInsertedId = $this->db->insert_id();
+		}catch(PDOException $e){
+			$msg = $e->getMessage();
+			$this->db->trans_rollback();
+		}
+	}
 }
