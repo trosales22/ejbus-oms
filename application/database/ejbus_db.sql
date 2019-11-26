@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 20, 2019 at 03:31 PM
+-- Generation Time: Nov 26, 2019 at 03:05 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -21,6 +21,22 @@ SET time_zone = "+00:00";
 --
 -- Database: `ejbus_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `announcements`
+--
+
+CREATE TABLE `announcements` (
+  `announcement_id` int(255) NOT NULL,
+  `announcement_caption` varchar(255) NOT NULL,
+  `announcement_details` longtext NOT NULL,
+  `announcement_link` varchar(255) DEFAULT NULL,
+  `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_by` mediumint(8) NOT NULL,
+  `active_flag` enum('Y','N') NOT NULL DEFAULT 'Y'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -125,24 +141,15 @@ INSERT INTO `user_roles` (`user_id`, `role_code`) VALUES
 (1, 'ADMIN');
 
 --
--- Table structure for table `announcements`
---
-
-CREATE TABLE `announcements` (
-  `announcement_id` int(255) NOT NULL AUTO_INCREMENT,
-  `announcement_caption` varchar(255) NOT NULL,
-  `announcement_details` longtext NOT NULL,
-  `announcement_link` varchar(255) DEFAULT NULL,
-  `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `created_by` mediumint(8) NOT NULL,
-  `active_flag` enum('Y','N') NOT NULL DEFAULT 'Y',
-  PRIMARY KEY (`announcement_id`),
-  UNIQUE KEY `announcement_id_UNIQUE` (`announcement_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `announcements`
+--
+ALTER TABLE `announcements`
+  ADD PRIMARY KEY (`announcement_id`),
+  ADD UNIQUE KEY `announcement_id_UNIQUE` (`announcement_id`);
 
 --
 -- Indexes for table `bus`
@@ -184,6 +191,12 @@ ALTER TABLE `user_roles`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `announcements`
+--
+ALTER TABLE `announcements`
+  MODIFY `announcement_id` int(255) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `bus`
