@@ -9,14 +9,16 @@ class Home extends CI_Controller {
 		$this->load->library('session');
 		$this->load->database();
 		$this->load->model('Home_model', 'home_model');
+		$this->load->model('api/Announcements_model', 'announcements_model');
 	}
 	
   	public function index() {
-		$this->data['buses'] = $this->home_model->get_buses();
-		$this->data['reservations'] = $this->home_model->get_reservation();
+		$this->data['buses'] 			= $this->home_model->get_buses();
+		$this->data['reservations'] 	= $this->home_model->get_reservation();
+		$this->data['announcements'] 	= $this->announcements_model->get_announcements();
     	$this->load->view('home_page', $this->data);
 	}
-
+	
 	public function reserve_now(){
 		try{
 			$success       				= 0;

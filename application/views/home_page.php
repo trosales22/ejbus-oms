@@ -99,7 +99,84 @@
             </div>
           </div>
         </div>
-				<!-- End Reservation -->
+        <!-- End Reservation -->
+        
+        <!-- Begin Announcements -->
+        <div class="container-fluid">
+          <!-- Page Heading -->
+          <h1 class="h3 mb-2 text-gray-800">Announcements</h1>
+
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <a class="btnAddAnnouncement btn btn-danger btn-icon-split" href="#" data-toggle="modal" data-target="#addAnnouncementModal">
+                <span class="icon text-white-50">
+                  <i class="fas fa-plus-circle"></i>
+                </span>
+                <span class="text">Add Announcement</span>
+              </a>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="tbl_announcements" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Caption</th>
+											<th>Details</th>
+											<th>Source/Link</th>
+											<th>Creator</th>
+											<th>Date Posted</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  
+                  <tbody>
+										<?php foreach($announcements as $announcement){?>
+											<tr>
+												<td><?php echo $announcement->announcement_caption; ?></td>
+												<td><?php echo $announcement->announcement_details; ?></td>
+												<td>
+													<?php 
+														if(empty($announcement->announcement_link)){
+															echo '<div class="alert alert-danger">
+																			<span class="icon text-red-50" style="margin-right: auto;">
+																				<i class="fas fa-exclamation-triangle"></i>
+																			</span> <b>LINK NOT AVAILABLE!</b>
+																		</div>';
+														}else{
+															echo $announcement->announcement_link; 
+														}
+													?>
+												</td>
+												<td><?php echo $announcement->username; ?></td>
+												<td><?php echo $announcement->announcement_created_date;?></td>
+												<td>
+													<a style="width: 100%; cursor: pointer; color: white;" data-id="<?php echo $announcement->announcement_id;?>" class="btnDeleteAnnouncement btn btn-danger btn-icon-split">
+														<span class="icon text-white-50" style="margin-right: auto;">
+															<i class="fas fa-trash"></i>
+														</span>
+														<span class="text" style="margin-right: auto;">Delete Announcement</span>
+													</a>
+												</td>
+											</tr> 
+                     <?php }?>
+                  </tbody>
+
+                  <tfoot>
+                    <tr>
+											<th>Caption</th>
+											<th>Details</th>
+											<th>Source/Link</th>
+											<th>Creator</th>
+											<th>Date Posted</th>
+                      <th>Actions</th>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Announcements -->
 				
       </div>
       <!-- End of Main Content -->
@@ -117,7 +194,9 @@
     <i class="fas fa-angle-up"></i>
 	</a>
 
-	<?php include 'pages/modals/reserve_now.php';?>
+  <?php include 'pages/modals/reserve_now.php';?>
+  
+  <?php include 'pages/modals/add_announcement.php';?>
 	
 	<?php include 'pages/modals/logout.php';?>
 	
