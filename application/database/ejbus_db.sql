@@ -125,6 +125,22 @@ INSERT INTO `user_roles` (`user_id`, `role_code`) VALUES
 (1, 'ADMIN');
 
 --
+-- Table structure for table `announcements`
+--
+
+CREATE TABLE `announcements` (
+  `announcement_id` int(255) NOT NULL AUTO_INCREMENT,
+  `announcement_caption` varchar(255) NOT NULL,
+  `announcement_details` longtext NOT NULL,
+  `announcement_link` varchar(255) DEFAULT NULL,
+  `created_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_by` mediumint(8) NOT NULL,
+  `active_flag` enum('Y','N') NOT NULL DEFAULT 'Y',
+  PRIMARY KEY (`announcement_id`),
+  UNIQUE KEY `announcement_id_UNIQUE` (`announcement_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
 -- Indexes for dumped tables
 --
 
