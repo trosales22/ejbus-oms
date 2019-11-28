@@ -253,11 +253,8 @@ $(function() {
 	
 	$('#frmAddAnnouncement').parsley().on('field:validated', function() {
 		var ok = $('.parsley-error').length === 0;
-
-		if(ok){
-			addAnnouncement();
-		}
 	});
 
+	addAnnouncement();
 	deleteAnnouncement();
 });
